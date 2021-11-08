@@ -24,14 +24,16 @@ const App = () => {
     Alert.alert('This functionality is not available, Yet.');
   };
 
-  const [one, setOne] = useState('');
+  const [displayString, setdisplayString] = useState('');
+  const [valueStoring, setvalueStoring] = useState(0);
+  
 
   return (
     <View style={styles.mainView}>
       <View style={styles.firstView}>
         <View style={{flex: 1}}>
           <TextInput
-            value={one}
+            value={displayString}
             selectTextOnFocus={false}
             showSoftInputOnFocus={false}
             autoFocus
@@ -105,7 +107,8 @@ const App = () => {
       <View style={styles.secondView}>
         <View style={styles.fourRow}>
           <TouchableOpacity
-            onPress={() => setOne(one + '')}
+            onPress={() => setdisplayString('')}
+            onPress={() => setvalueStoring(0)}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={[styles.textStyles, {color: '#f76f68'}]}>C</Text>
           </TouchableOpacity>
@@ -123,7 +126,7 @@ const App = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => setOne(one + ' ÷ ')}
+            onPress={() => setdisplayString(displayString + ' ÷ ')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={[styles.textStyles, {color: '#9bd260'}]}>÷</Text>
           </TouchableOpacity>
@@ -131,22 +134,23 @@ const App = () => {
 
         <View style={styles.thirdRow}>
           <TouchableOpacity
-            onPress={() => setOne(one + '7')}
+            onPress={() => setdisplayString(displayString + '7')}
+            onPress={() => setvalueStoring(valueStoring + 7)}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>7</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '8')}
+            onPress={() => setdisplayString(displayString + '8')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>8</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '9')}
+            onPress={() => setdisplayString(displayString + '9')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>9</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + ' x ')}
+            onPress={() => setdisplayString(displayString + ' x ')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={[styles.textStyles, {color: '#9bd260'}]}>x</Text>
           </TouchableOpacity>
@@ -154,22 +158,22 @@ const App = () => {
 
         <View style={styles.secondRow}>
           <TouchableOpacity
-            onPress={() => setOne(one + '4')}
+            onPress={() => setdisplayString(displayString + '4')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>4</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '5')}
+            onPress={() => setdisplayString(displayString + '5')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '6')}
+            onPress={() => setdisplayString(displayString + '6')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>6</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + ' - ')}
+            onPress={() => setdisplayString(displayString + ' - ')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={[styles.textStyles, {color: '#9bd260'}]}>-</Text>
           </TouchableOpacity>
@@ -177,22 +181,24 @@ const App = () => {
 
         <View style={styles.firstRow}>
           <TouchableOpacity
-            onPress={() => setOne(one + '3')}
+            onPress={() => setdisplayString(displayString + '3')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>3</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.touchAblbeButtonStyle]}>
-            <Text onPress={() => setOne(one + '2')} style={styles.textStyles}>
+            <Text
+              onPress={() => setdisplayString(displayString + '2')}
+              style={styles.textStyles}>
               2
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '1')}
+            onPress={() => setdisplayString(displayString + '1')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>1</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + ' + ')}
+            onPress={() => setdisplayString(displayString + ' + ')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={[styles.textStyles, {color: '#9bd260'}]}>+</Text>
           </TouchableOpacity>
@@ -205,12 +211,12 @@ const App = () => {
             <Text style={styles.textStyles}>+/-</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '0')}
+            onPress={() => setdisplayString(displayString + '0')}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>0</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setOne(one + '.')}
+            onPress={() => setdisplayString(displayString + '.')}
             style={[styles.touchAblbeButtonStyle, {}]}>
             <Text style={[styles.textStyles, {}]}>.</Text>
           </TouchableOpacity>
