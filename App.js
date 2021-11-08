@@ -25,7 +25,7 @@ const App = () => {
   };
 
   const [displayString, setdisplayString] = useState('');
-  const [valueStoring, setvalueStoring] = useState(0);
+  const [operator, setOperator] = useState('');
   
 
   return (
@@ -108,7 +108,6 @@ const App = () => {
         <View style={styles.fourRow}>
           <TouchableOpacity
             onPress={() => setdisplayString('')}
-            onPress={() => setvalueStoring(0)}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={[styles.textStyles, {color: '#f76f68'}]}>C</Text>
           </TouchableOpacity>
@@ -135,7 +134,6 @@ const App = () => {
         <View style={styles.thirdRow}>
           <TouchableOpacity
             onPress={() => setdisplayString(displayString + '7')}
-            onPress={() => setvalueStoring(valueStoring + 7)}
             style={[styles.touchAblbeButtonStyle]}>
             <Text style={styles.textStyles}>7</Text>
           </TouchableOpacity>
